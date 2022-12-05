@@ -15,6 +15,9 @@ score = 0
 
 for pair in pairs:
      score = 0
+
+
+
      if pair[2] == "X":
           score += 1
           if pair[0] == "A":
@@ -26,6 +29,9 @@ for pair in pairs:
           if pair[0] == "C":
                score += 6
                totals.append(score)
+
+
+
      if pair[2] == "Y":
           score += 2
           if pair[0] == "A":
@@ -37,6 +43,9 @@ for pair in pairs:
           if pair[0] == "C":
                score += 0
                totals.append(score)
+
+
+
      if pair[2] == "Z":
           score += 3
           if pair[0] == "A":
@@ -49,13 +58,11 @@ for pair in pairs:
                score += 3
                totals.append(score)
 
-print(totals)
-
 final = 0
 for int in totals:
      final += int
 
-print(final)
+print(f"Part 1:{final}")
 
 # Part 2
 # A scores 1 ROCK
@@ -70,36 +77,47 @@ score = 0
 
 for pair in pairs:
      score = 0
-     if pair[2] == "X":
-          score += 1
-          if pair[0] == "A":
+
+
+     if pair[0] == "A":
+          if pair[2] == "X":
                score += 3
                totals.append(score)
-          if pair[0] == "B":
-               score += 0
+          if pair[2] == "Y":
+               score += 4
                totals.append(score)
-          if pair[0] == "C":
+          if pair[2] == "Z":
+               score += 8
+               totals.append(score)
+
+
+
+     if pair[0] == "B":
+          if pair[2] == "X":
+               score += 1
+               totals.append(score)
+          if pair[2] == "Y":
+               score += 5
+               totals.append(score)
+          if pair[2] == "Z":
+               score += 9
+               totals.append(score)
+
+
+
+     if pair[0] == "C":
+          if pair[2] == "X":
+               score += 2
+               totals.append(score)
+          if pair[2] == "Y":
                score += 6
                totals.append(score)
-     if pair[2] == "Y":
-          score += 2
-          if pair[0] == "A":
-               score += 6
+          if pair[2] == "Z":
+               score += 7
                totals.append(score)
-          if pair[0] == "B":
-               score += 3
-               totals.append(score)
-          if pair[0] == "C":
-               score += 0
-               totals.append(score)
-     if pair[2] == "Z":
-          score += 3
-          if pair[0] == "A":
-               score += 0
-               totals.append(score)
-          if pair[0] == "B":
-               score += 6
-               totals.append(score)
-          if pair[0] == "C":
-               score += 3
-               totals.append(score)
+
+final = 0
+for int in totals:
+     final += int
+
+print(f"Part 2: {final}")
