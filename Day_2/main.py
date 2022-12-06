@@ -16,8 +16,6 @@ score = 0
 for pair in pairs:
      score = 0
 
-
-
      if pair[2] == "X":
           score += 1
           if pair[0] == "A":
@@ -77,7 +75,6 @@ score = 0
 
 for pair in pairs:
      score = 0
-
 
      if pair[0] == "A":
           if pair[2] == "X":
