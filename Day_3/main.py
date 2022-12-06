@@ -1,23 +1,25 @@
-with open('/Users/Audey/Desktop/advent-of-code-2022/Day_3/input_data.txt', 'r') as f:
-    lines = f.readlines()
-    packs = [entry.strip() for entry in lines]
+from string import ascii_letters
 
-p1 = ""
-p2 = ""
-l1 = []
-firstPacks   = []
-secondPacks  = []
-for pack in packs:
-     p1 = pack[:len(pack)//2]
-     p2 = pack[len(pack)//2:]
-     firstPacks.append(p1)
-     secondPacks.append(p2)
+# Getting data
+with open('Day_3/input_data.in') as file:
+    data = [i for i in file.read().strip().split("\n")]
 
-for char in p1:
-     
 
-#Checking it works:
-#
-#rNZNWvMZZmDDmwqNdZrWTqhJMhhgzggBhzBJBchQzzJJ
-#rNZNWvMZZmDDmwqNdZrWTq
-#                      hJMhhgzggBhzBJBchQzzJJ
+# ==== PART 1 ====
+
+# # Iterate through out dataset
+totalSum = 0
+for entry in data:
+    # Get the half way mark
+    half = len(entry)//2
+    
+    # Split up the string
+    leftSide = set(entry[:half])
+    rightSide = set(entry[half:])
+
+    # print(leftSide, rightSide)
+    for value, character in enumerate(ascii_letters):
+        if character in leftSide and character in rightSide:
+            totalSum += value + 1
+
+print("Answer to part 1: ", totalSum)
