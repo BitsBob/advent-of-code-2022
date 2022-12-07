@@ -9,5 +9,4 @@ def findMarkerPartTwo(data):
 	
 with open('Day_6/input_data.txt', 'r') as f:
 	data = f.readline()
-	print(findMarkerPartOne(data))
-	print(findMarkerPartTwo(data))
+	print(findMarkerPartOne(data), findMarkerPartTwo(data))
