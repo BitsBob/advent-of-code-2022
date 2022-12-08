@@ -1,4 +1,5 @@
 """
+for copying to dic
         [H]     [W] [B]            
     [D] [B]     [L] [G] [N]        
 [P] [J] [T]     [M] [R] [D]        
@@ -9,7 +10,7 @@
 [T] [L] [Z] [R] [C] [Q] [V] [P] [H]
  1   2   3   4   5   6   7   8   9 
 """
-blocks_dict= {
+block_dic= {
      "list_1": ["T", "D", "W", "Z", "V", "P"],
      "list_2": ["L", "S", "W", "V", "F", "J", "D"],
      "list_3": ["Z", "M", "L", "S", "V", "T", "B", "H"],
@@ -27,10 +28,10 @@ with open("Day_5/input_data.txt") as file:
           number_of_blocks = int(numbers.split("from")[0].strip())
           move_from = int(line.split('from')[1].split('to')[0])
           move_to = int(line.split('from')[1].split('to')[1])
-          blocks = blocks_dict[f"list_{move_from}"][-number_of_blocks:]
+          blocks = block_dic[f"list_{move_from}"][-number_of_blocks:]
           blocks_main = blocks[::-1]
           for block in blocks_main:
-               blocks_dict[f"list_{move_from}"].pop()
-               blocks_dict[f"list_{move_to}"].append(block)
-for list in blocks_dict:
-     print(blocks_dict[list][-1])
+               block_dic[f"list_{move_from}"].pop()
+               block_dic[f"list_{move_to}"].append(block)
+for list in block_dic:
+     print(block_dic[list][-1])
