@@ -22,16 +22,19 @@ block_dic= {
      "list_9": ["H", "G", "Z", "R", "C"],
 }
 
-with open("Day_5/input_data.txt") as file:
-     for line in file:
-          numbers = line.split('move')[1].strip()
-          number_of_blocks = int(numbers.split("from")[0].strip())
-          move_from = int(line.split('from')[1].split('to')[0])
-          move_to = int(line.split('from')[1].split('to')[1])
-          blocks = block_dic[f"list_{move_from}"][-number_of_blocks:]
-          blocks_main = blocks[::-1]
-          for block in blocks_main:
-               block_dic[f"list_{move_from}"].pop()
-               block_dic[f"list_{move_to}"].append(block)
-for list in block_dic:
-     print(block_dic[list][-1])
+def part_1 ():
+     with open("Day_5/input_data.txt") as file:
+          for line in file:
+               numbers = line.split('move')[1].strip()
+               number_of_blocks = int(numbers.split("from")[0].strip())
+               move_from = int(line.split('from')[1].split('to')[0])
+               move_to = int(line.split('from')[1].split('to')[1])
+               blocks = block_dic[f"list_{move_from}"][-number_of_blocks:]
+               blocks_main = blocks[::-1]
+               for block in blocks_main:
+                    block_dic[f"list_{move_from}"].pop()
+                    block_dic[f"list_{move_to}"].append(block)
+     for list in block_dic:
+          print(block_dic[list][-1])
+
+part_1()
