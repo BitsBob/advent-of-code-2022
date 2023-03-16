@@ -2,3 +2,4 @@
 
 with open('Day_3/input_data.txt') as file:
     data = [i for i in file.read().strip().split("\n")]
+
